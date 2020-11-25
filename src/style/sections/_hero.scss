@@ -15,6 +15,18 @@
   right: 0;
   z-index: -1;
 
+  .hero-box {
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    box-shadow: rgba(0, 0, 0, 0.164) 0 0 30px;
+    border: solid white 1px;
+    border-radius: 3rem;
+    padding: 2rem;
+  }
+
   // If you want to set a background image on the hero section, uncomment these with yout custom image
 
   /* background: url("/src/assets/[your-image].png");
@@ -61,5 +73,80 @@
         font-size: 2rem;
       }
     }
+  }
+}
+
+#circles {
+  position: absolute;
+  padding: 1rem;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  .svg-circle-lines {
+    stroke: #2f6bbc;
+    stroke-width: 0.1px;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.fade-in {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
